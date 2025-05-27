@@ -258,12 +258,11 @@ public class CadastroBDTeste {
                     String tipo = scanner.nextLine().toUpperCase();
 
                     if (tipo.equals("F")) {
-                        List<PessoaFisica> listaPF = pfDAO.getPessoas();
-                            for (PessoaFisica pf : listaPF) pf.exibir();
+                        pfDAO.getPessoas().forEach(PessoaFisica::exibir);
+
                     } 
                     else if (tipo.equals("J")) {
-                        List<PessoaJuridica> listaPJ = pjDAO.getPessoas();
-                            for (PessoaJuridica pj : listaPJ) pj.exibir(); 
+                        pjDAO.getPessoas().forEach(PessoaJuridica::exibir); 
                     }
                 }
             
